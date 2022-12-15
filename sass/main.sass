@@ -1,0 +1,479 @@
+@use 'sass:math'
+@use 'sass:color'
+
+@import "libs"
+@import "vars"
+
+@font-face
+	font-family: "actay-regular"
+	font-style: normal
+	font-weight: 400
+	src: local("actay"), url("../fonts/actay-regular.woff2") format("woff2"), url("../fonts/actay-regular.woff") format("woff"), url("../fonts/actay-regular.ttf") format("ttf"), url("../fonts/actay-regular.eot") format("eot")
+
+@font-face
+	font-family: "actay-thin"
+	font-style: normal
+	font-weight: 100
+	src: local("actay-thin"), url("../fonts/actaycondensed-thin.woff2") format("woff2"), url("../fonts/actaycondensed-thin.woff") format("woff"), url("../fonts/actaycondensed-thin.ttf") format("ttf"), url("../fonts/actaycondensed-thin.eot") format("eot")
+
+@font-face
+	font-family: "actay-bold"
+	font-style: normal
+	font-weight: 700
+	src: local("actaywide-bold"), url("../fonts/actaywide-bold-actay.woff2") format("woff2"), url("../fonts/actaywide-bold-actay.woff") format("woff"), url("../fonts/actaywide-bold-actay.ttf") format("ttf"), url("../fonts/actaywide-bold-actay.eot") format("eot")
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	font-family: 'actay-regular'
+	overflow-x: hidden
+	background-image: url('../img/bg.png')
+	background-size: cover
+	background-position: center
+	background-color: #fff
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+::selection
+	background-color: $accent
+	color: #fff
+
+.main--wrapper
+	display: flex
+	flex-direction: column
+	height: 100%
+	.content
+		flex: 1 0 auto
+
+section, header
+	position: relative
+	background-size: cover
+	background-position: center
+
+header
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+section
+	margin: 60px 0
+
+.h1, .h2, .h3, .h4, .h5, .h6
+	font-family: "actay-bold"
+	margin: 0
+	margin-bottom: 20px
+
+.h1
+	font-size: 100px
+.h2
+	font-size: 64px
+.h3
+	font-size: 40px
+.h4
+	font-size: 32px
+.h5
+	font-size: 20px
+
+.h1, .h2, .h3
+	position: relative
+	margin: 0
+	span
+		position: absolute
+		color: transparent
+		-webkit-text-stroke: .8px $black
+		width: 100%
+		left: 0
+		top: 10px
+		font-weight: bold
+
+p, a, span
+	font-weight: 400
+	font-style: normal
+
+a
+	text-decoration: none
+	color: $black
+	transition: all .3s ease
+	svg
+		transition: all .3s ease
+		fill: $black
+	&:hover
+		text-decoration: none
+		color: $white
+		background-color: $accent
+		svg
+			fill: $white
+
+img
+	max-width: 100%
+
+.container
+	max-width: 1440px
+	width: 100%
+	margin: 0 auto
+.row
+	padding: 0 48px
+
+.logo
+	&--img
+		width: 31px
+		height: auto
+
+.social
+	display: flex
+	gap: 10px
+	flex-direction: row
+	align-items: flex-start
+	&--icon
+		padding: 8px 16px
+		border: 1px solid #262626
+		display: inline-block
+		height: 32px
+		svg
+			width: 20px
+			height: auto
+		&:hover
+			border: 1px solid $accent
+			box-shadow: 5px 5px 0px 0px #D9D9D9
+
+.button
+	display: inline-block
+	border: none
+	color: $white
+	background-color: $black
+	padding: 26px 34px
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .3s ease
+	cursor: pointer
+	display: flex
+	align-items: center
+	gap: 10px
+	font-weight: bold
+	font-family: "actay-bold"
+	font-size: 18px
+	position: relative
+	&::after
+		content: ''
+		display: block
+		position: absolute
+		border: 1px solid #000
+		width: 264px
+		height: 76px
+		left: 0
+		bottom: -10px
+		z-index: -1
+	span
+		height: 19px
+	svg
+		path
+			fill: $white
+	&:focus, &:hover
+		text-decoration: none
+		color: $white
+		&::after
+			border: 1px solid $accent
+		path
+			transition: all .3s ease
+			stroke: $accent
+	&:active
+		background-color: darken($accent, 20%)
+
+.header
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	position: relative
+	&--menu
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-top: 45px
+		position: relative
+		.burger
+			max-width: 82px
+			display: flex
+			align-items: center
+			gap: 5px
+			transition: all .3s ease
+			svg
+				width: 32px
+				height: auto
+				fill: transparent
+			path
+				stroke: #0F0F0F
+			&:hover
+				background-color: transparent
+				color: $accent
+				svg
+					fill: transparent
+		.logo
+			max-width: 31px
+			text-align: center
+			display: flex
+			justify-content: center
+			align-items: center
+			position: absolute
+			left: 0
+			right: 0
+			margin: auto
+		.social
+			max-width: 300px
+	&--title
+		text-align: center
+		.title
+			display: flex
+			overflow: hidden
+			width: max-content
+			.wrapper
+				display: flex
+				align-items: center
+				flex-direction: row
+				flex-wrap: nowrap
+				display: flex
+				font-weight: bold
+				gap: 20px
+				.star
+					width: 91px
+					height: 91px
+	&--bottom
+		display: flex
+		flex-direction: column
+		gap: 50px
+		position: relative
+		.concept
+			display: flex
+			flex-wrap: wrap
+			justify-content: flex-end
+			margin-left: auto
+			gap: 16px
+			max-width: 500px
+			a
+				padding: 8px 16px
+				border: 1px solid #000
+				font-weight: bold
+				text-transform: uppercase
+				&:hover
+					box-shadow: 5px 5px 0 0 #d9d9d9
+					background-color: transparent
+					color: initial
+		.down
+			position: absolute
+			z-index: 0
+			bottom: 79px
+			left: 0
+			right: 0
+			margin: auto
+			max-width: 286px
+			display: flex
+			svg
+				max-width: 36px
+				position: absolute
+				z-index: 9
+				bottom: 20px
+				left: 46%
+			&:hover
+				background-color: transparent
+				svg
+					transform: scale(1.2)
+	&--devs
+		z-index: 2
+		width: 1000%
+		display: flex
+		gap: 30px
+		padding: 20px 0
+		border-top: 1px solid #000
+		border-bottom: 1px solid #000
+		.dev
+			display: flex
+			align-items: center
+			gap: 30px
+			.text
+				font-size: 32px
+				font-family: "actay-bold"
+
+.collaborate
+	height: 100vh
+	margin: 0
+	display: flex
+	align-items: center
+	.titles
+		.h2
+			font-size: 100px
+			margin-bottom: 48px
+			&.first
+				margin: 0
+				font-family: "actay-regular"
+				font-weight: normal
+	.texts
+		display: flex
+		flex-wrap: nowrap
+		gap: 24px
+		position: relative
+		p
+			max-width: 523px
+			opacity: 0.5
+		.stars
+			position: absolute
+			right: 40px
+			bottom: 0
+			img
+				&:last-child
+					bottom: auto
+					top: -20px
+					right: -45px
+					position: absolute
+
+.projects
+	height: 100vh
+	.header--wrapper
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		.button
+			margin-top: 10px
+		.titles
+			h3
+				&.first
+					font-weight: 400
+					font-family: "actay-regular"
+				span
+					top: 3px
+		.line
+			width: 1px
+			height: 102px
+			background-color: #282829
+	.slider
+		margin-left: 48px
+		width: 100%
+		overflow: auto
+		scrollbar-width: none
+		&::-webkit-scrollbar
+			width: 5px
+		.wrapper
+			display: flex
+			width: 165%
+		.item
+			display: flex
+			align-items: flex-end
+			justify-content: space-between
+			position: relative
+			min-height: 400px
+			margin-right: 72px
+			min-width: 717px
+			&:last-child
+				margin-right: 0
+			.texts
+				display: flex
+				flex-direction: column
+				gap: 15px
+				.h3
+					line-height: 1
+					font-size: 64px
+					span
+						top: 5px
+				.wrapper
+					display: flex
+					align-items: flex-end
+					gap: 10px
+					.date
+						color: #4D4D4D
+						margin-bottom: 8px
+				.button
+					width: 169px
+					padding: 16px 34px
+					background-color: $white
+					color: $black
+					border: 1px solid $black
+					font-size: 16px
+					white-space: nowrap
+					height: 53px
+					&::after
+						width: 172px
+						height: 53px
+						bottom: -5px
+			.image
+				position: absolute
+				right: 0
+				top: 0
+				max-width: 360px
+			&:nth-child(2n)
+				align-items: flex-start
+				.image
+					right: 50px
+					bottom: 0
+					top: auto
+
+.blog
+	height: 100vh
+	.h2
+		margin-bottom: 48px
+	.subtitle
+		max-width: 523px
+		margin-bottom: 40px
+		color: #8C8C8C
+	&--wrapper
+		display: grid
+		grid-template-columns: 1fr 1fr
+		grid-template-rows: 1fr 1fr 1fr
+		gap: 15px 15px
+		grid-template-areas: 
+			"blog1 ."
+			"blog1 ."
+			"blog1 ."
+		justify-content: space-between
+		align-content: end
+		justify-items: stretch
+		align-items: stretch
+		width: 100%
+		.item-1
+			grid-area: blog1
+
+@import "media"
