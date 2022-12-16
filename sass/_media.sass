@@ -3,28 +3,313 @@
 /*==========  Desktop First  ==========*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
-	/**/
+@media only screen and (max-width : 1280px)
+	.header
+		&--bottom
+			.down
+				margin-left: 10%
+	.collaborate
+		.texts
+			flex-wrap: wrap
+			.stars
+				position: relative
+				right: 0
+				bottom: -30px
 
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	.h1
+		font-size: 64px
+	.h2
+		font-size: 50px
+	.header
+		&--bottom
+			.down
+				margin-left: 2%
+	.collaborate
+		.texts
+			.stars
+				bottom: auto
+				top: 0
+				position: absolute
+				right: 5%
+		.titles
+			.h2
+				font-size: 50px
+	.projects
+		.slider
+			.item
+				.texts
+					.h3
+						font-size: 50px
+				.image
+					max-width: 100%
+	.blog
+		&--wrapper
+			.item
+				&:first-child
+					.texts
+						.h3
+							font-size: 20px
+				.image
+					width: 35%
+				.texts
+					width: 65%
+					gap: normal
+					padding-left: 28px
+					.h3
+						font-size: 14px
 
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	/**/
+	.button
+		&::after
+			width: 254px
+			left: 10px
+	.header
+		&--menu
+			.logo
+				display: none
+		&--bottom
+			.down
+				display: none
+	.collaborate
+		.texts
+			.stars
+				position: relative
+				right: 58px
+				bottom: auto
+				top: 20px
+				margin-left: auto
+	.projects
+		.header
+			&--wrapper
+				.desktop
+					display: none
+		.button
+			&.mobile
+				display: flex
+				margin: 0 auto
+				margin-top: 105px
+				max-width: 254px
+				font-size: 16px
+				&::after
+					left: 10px
+					max-width: 254px
+		.slider
+			.item
+				.texts
+					.button
+						&::after
+							left: 5px
+							width: 169px
+	.blog
+		&--wrapper
+			grid-template-areas: "."
+			grid-template-rows: 1fr 1fr
+			.item
+				flex-direction: column
+				.texts
+					gap: 10px
+				&:first-child
+					.image
+						max-height: 145px
+						img
+							max-height: 100%
+							object-fit: contain
+							height: 100%
+							width: 100%
+					.texts
+						padding: 19px 22px 7px 28px
+						gap: 10px
+						.overhead
+							font-size: 16px
+						.h3
+							font-size: 16px
+						.link
+							font-size: 18px
+				.image
+					width: 100%
+					border-right: none
+					border-bottom: 1px solid $black
+				.texts
+					width: 100%
+			.item-1
+				grid-area: auto
+	.footer 
+		.follow
+			&--wrapper
+				flex-direction: column
+				align-items: flex-start
+				gap: 20px
+				.company
+					margin-left: auto
 
-
-/* Extra Small Devices, Phones */
+	/* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+	.h2
+		font-size: 40px
+	.h1, .h2, .h3
+		span
+			top: 5px
+	.row
+		padding: 0 16px
+	.header
+		&--menu
+			.menu
+				.list
+					li
+						font-size: 40px
+			.social
+				&--icon
+					&:first-child, &:nth-child(2)
+						display: none
+		&--bottom
+			.container
+				display: none
+		&--title
+			.h2
+				font-size: 40px
+				font-family: "actay-regular"
+				max-width: 344px
+				margin: auto
+				margin-bottom: 55px
+		&--devs
+			background-color: $white
+	.collaborate
+		min-height: fit-content
+		margin-top: 141px
+		margin-bottom: 112px
+		&--wrapper
+			.titles
+				text-align: center
+				max-width: 353px
+				margin: auto
+				.h2
+					font-size: 40px
+		.texts
+			.stars
+				position: initial
+				display: flex
+				align-items: flex-start
+				img
+					width: 66px
+					&:last-child
+						width: 35px
+						position: inherit
+						
+	.projects
+		.slider
+			margin-left: 16px
+			.wrapper
+				gap: 90px
+			.item
+				flex-direction: column-reverse
+				align-items: flex-start
+				margin-right: 0
+				max-width: 480px
+				min-width: auto
+				min-height: auto
+				&:last-child
+					padding-right: 30px
+				.texts
+					.wrapper
+						justify-content: space-between
+						.date
+							margin-bottom: 0
+				&:nth-child(2n)
+					.texts
+						flex-direction: column-reverse
+				.image
+					position: initial
+					margin-bottom: 24px
+					max-width: 320px
+	.blog
+		&--wrapper
+			grid-template-rows: 1fr
+			grid-template-columns: 1fr
+			.item
+				flex-direction: row
+				grid-template-areas: "."
+				height: fit-content
+				.image
+					border-bottom: none
+					border-right: 1px solid $black
+					width: 30%
+					max-height: fit-content
+					img
+						width: 100%
+						object-fit: cover
+				.texts
+					width: 70%
+					padding: 13px 13px 5px 40px
+					height: auto
+					.overhead
+						font-size: 11px
+					.h3, .link
+						font-size: 13px
+				&:first-child
+					flex-direction: row
+					.image
+						border-right: 1px solid $black
+						border-bottom: none
+						width: 30%
+						max-height: fit-content
+						padding: 0
+					.texts
+						width: 70%
+						padding: 13px 13px 5px 40px
+						.overhead
+							font-size: 11px
+						.h3, .link
+							font-size: 13px
+	.footer
+		padding-bottom: 10px
+		.titles
+			.block
+				.h2
+					font-size: 32px
+				&:nth-child(2)
+					display: none
+		.follow
+			.h3
+				font-family: "actay-regular"
+				font-size: 32px
+				margin-bottom: 30px
+				margin-top: 30px
+		.social
+			flex-direction: column
+			margin-bottom: 112px
+	.collaborate .titles .h2,
+	.projects .slider .item .texts .h3
+		font-size: 40px
 
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 375px)
+	.collaborate
+		.texts
+			.stars
+				top: 40px
+	.projects .slider
+		.wrapper
+			gap: 35px
+		.item
+			min-width: 325px
+			.image
+				max-width: 250px
+				margin-top: 5px
+	.footer 
+		.titles 
+			.block 
+				.h2
+					font-size: 32px
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
-	/**/
+	.footer .titles .block .h2
+		font-size: 24px
 
 
 /*==========  Mobile First  ==========*/
