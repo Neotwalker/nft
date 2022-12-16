@@ -1,7 +1,9 @@
 $(function() {
 
 	$('.marquee').marquee({
-		duration: 24000,
+		duration: 32000,
+		allowCss3Support: true,
+		css3easing: 'linear',
 		startVisible: true,
 		duplicated: true
 	});
