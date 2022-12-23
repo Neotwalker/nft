@@ -650,4 +650,293 @@ img
 					gap: 10px
 					border: 1px solid $white
 
+.page
+	&--projects
+		.header
+			&--title
+				margin: auto 0
+		.projects
+			&--wrapper
+				display: flex
+				width: 100%
+				flex-wrap: wrap
+				justify-content: space-between
+				border-top: 1px solid #282829
+				border-left: 1px solid #282829
+				.item
+					flex: 1 1 33%
+					max-width: 100%
+					border-right: 1px solid #282829
+					border-bottom: 1px solid #282829
+					padding: 20px 24px 41px
+					display: block
+					&:hover
+						background-color: transparent
+						color: $black
+						.h3
+							transition: all .3s ease
+							color: $accent
+							span
+								-webkit-text-stroke: .8px $accent
+					.block
+						display: flex
+						flex-direction: column-reverse
+						.right
+							text-align: center
+							margin-bottom: 50px
+							margin-top: 24px
+							img
+								max-height: 384px
+						.left
+							display: flex
+							flex-direction: column
+							gap: 24px
+							.by
+								font-family: "actay-bold"
+								font-size: 20px
+					&--wrapper
+						.concepts
+							display: flex
+							flex-wrap: wrap
+							gap: 16px
+							margin-bottom: 20px
+							.concept
+								background-color: $white
+								padding: 12px
+								font-family: "actay-bold"
+								text-transform: uppercase
+								border: 1px solid $black
+					.h3
+						line-height: 1
+						span
+							top: 5px
+							z-index: -1
+					&:first-child
+						flex: 1 1 100%
+						border: none
+						padding: 0
+						background-color: #282829
+						.h2
+							color: $white
+							line-height: 1
+							span
+								-webkit-text-stroke: .8px $white
+								top: 5px
+						.date
+							color: $white
+						.block
+							min-height: 635px
+							display: flex
+							justify-content: space-between
+							align-items: center
+							flex-direction: inherit
+							padding-left: 12%
+							padding-right: 4.6%
+							.left
+								display: flex
+								flex-direction: column
+								justify-content: space-between
+								min-height: 334px
+								.wrapper
+									.flex
+										align-items: flex-end
+										gap: 10px
+										margin-bottom: 20px
+								.flex
+									align-items: center
+									gap: 55px
+									.by
+										color: #4D4D4D
+										font-family: "actay-bold"
+										font-weight: 700
+										font-size: 16px
+									.button
+										background-color: $white
+										border: 1px solid $black
+										color: $black
+										font-size: 16px
+										height: 53px
+										padding: 16px 34px
+										white-space: nowrap
+										width: 169px
+										span
+											position: relative
+											&::before
+												content: ''
+												background-color: $black
+												display: block
+												position: absolute
+												transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1)
+												bottom: 0px
+												right: 0
+												width: 0
+												height: 1px
+										&::after
+											width: 169px
+											border-color: $white
+											z-index: 0
+											height: 53px
+											left: 5px
+										&:hover
+											span
+												&::before
+													left: 0
+													right: auto
+													width: 100%
+							.right
+								img
+									min-width: 549px
+									width: 100%
+					&:nth-child(2), &:nth-child(3)
+						flex: 1 1 50%
+	&--project
+		.header
+			justify-content: flex-start
+			&--menu
+				margin-bottom: 50px
+			&--title
+				text-align: left
+				.title
+					display: flex
+					justify-content: space-between
+					width: 100%
+					align-items: flex-end
+					margin-bottom: 40px
+					.h1
+						font-size: 7.22vw
+						line-height: normal
+					.date
+						margin-bottom: 10px
+						color: #4D4D4D
+				.image
+					position: relative
+					img
+						box-shadow: 10px 10px 0 0 #282829
+
+.basics, .solution
+	min-height: 100vh
+	.h2
+		font-size: 5vw
+		margin-bottom: 45px
+	&--wrapper
+		gap: 20px
+		display: flex
+		justify-content: space-between
+		.text
+			max-width: 533px
+			padding-left: 10vh
+			.list
+				list-style-type: none
+				display: flex
+				gap: 43px
+				flex-direction: column
+				li
+					.h4
+						display: flex
+						gap: 30px
+						color: #282829
+						.number
+							padding: 8px 16px
+							background-color: $accent
+							color: $white
+							line-height: normal
+							font-size: 16px
+							box-shadow: 4px 4px 0 0 #D9D9D9
+					p
+						color: #525252
+						a
+							color: #525252
+							display: block
+							text-decoration: underline
+							&:hover
+								background-color: transparent
+								opacity: 0.6
+		.image
+			img
+				box-shadow: 10px 10px 0 0 #4D4D4D
+
+.solution
+	margin-top: 19vh
+	&--wrapper
+		flex-direction: column
+		.h2
+			margin-bottom: 12vh
+		.text
+			max-width: 100%
+			li
+				display: flex
+				align-items: flex-start
+				gap: 22px
+				p
+					max-width: 1006px
+				.number
+					font-family: "actay-bold"
+					padding: 8px 16px
+					background-color: $accent
+					color: $white
+					line-height: normal
+					font-size: 16px
+					box-shadow: 4px 4px 0 0 #D9D9D9
+
+.technical
+	margin-bottom: 38vh
+	.h2
+		max-width: 707px
+		margin-bottom: 12.5vh
+		span
+			top: 12px
+	&--wrapper
+		gap: 20px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		.image
+			padding-left: 10vh
+			img
+				box-shadow: -10px 10px 0 0 #282829
+		.text
+			max-width: 588px
+			.list
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+				gap: 11vh
+				list-style-type: none
+				li
+					color: #525252
+					.h4
+						color: #282829
+						display: flex
+						align-items: center
+						gap: 27px
+						text-transform: uppercase
+						.number
+							font-size: 16px
+							padding: 8px 16px
+							background-color: $accent
+							color: $white
+							line-height: normal
+							font-size: 16px
+							box-shadow: 4px 4px 0 0 #D9D9D9
+					ul
+						li
+							display: flex
+							align-items: flex-start
+							gap: 10px
+							line-height: 22px
+							margin-bottom: 8px
+							&::before
+								margin-left: 10px
+								margin-top: 9px
+								content: ''
+								display: block
+								width: 4px
+								min-width: 4px
+								height: 4px
+								background-color: #525252
+								border-radius: 50%
+
+.flex
+	display: flex
+
 @import "media"

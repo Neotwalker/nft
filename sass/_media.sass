@@ -15,14 +15,34 @@
 				position: relative
 				right: 0
 				bottom: -30px
-
+	.page
+		&--projects
+			.projects
+				&--wrapper
+					.item
+						.block
+							.right
+								img
+									max-width: 353px
+									max-height: 262px
+									object-fit: contain
+						&:first-child
+							.block
+								.right
+									img
+										min-width: auto
+	.technical
+		&--wrapper .text .list
+			gap: 4vh
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
 	.h1
-		font-size: 64px
+		font-size: 8vw
 	.h2
-		font-size: 50px
+		font-size: 6vw
+	.h3
+		font-size: 5vw
 	.header
 		&--bottom
 			.down
@@ -60,7 +80,46 @@
 					padding-left: 28px
 					.h3
 						font-size: 14px
-
+	.page
+		&--projects
+			.projects
+				&--wrapper
+					.item
+						flex: 100%
+						max-height: 390px
+						.block
+							flex-direction: row
+							align-items: center
+							justify-content: space-between
+							.right
+								max-width: 50%
+								margin: 0
+								img
+									max-height: 270px
+									max-width: 100%
+						&:nth-child(2), &:nth-child(3)
+							flex: 100%
+						&:first-child 
+							.block
+								padding: 20px 24px
+								min-height: fit-content
+								.left
+									min-height: 200px
+						&--wrapper
+							.concepts
+								gap: 10px
+								.concept
+									padding: 7px
+	.solution, .technical, .basics
+		min-height: fit-content
+		margin-top: 2vh
+		&--wrapper
+			align-items: flex-start
+			.h4
+				font-size: 3vh
+				align-items: center
+			.text, .image
+				padding-left: 0
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -146,6 +205,63 @@
 				gap: 20px
 				.company
 					margin-left: auto
+	.page
+		&--projects 
+			.projects
+				&--wrapper 
+					.item
+						&:first-child 
+							.block 
+								.left 
+									.wrapper 
+										.flex
+											flex-direction: row
+									.flex
+										flex-direction: column
+										align-items: flex-start
+										gap: 20px
+										.button
+											font-size: 14px
+											height: 30px
+											z-index: 1
+											&::after
+												height: 30px
+												z-index: -1
+												bottom: -5px
+												left: 5px
+		&--project
+			.header
+				min-height: 50vh
+	.solution, .technical, .basics
+		min-height: fit-content
+		margin-top: 2vh
+		&--wrapper
+			align-items: flex-start
+			.h4
+				font-size: 2vh
+				align-items: center
+			.text, .image
+				padding-left: 0
+				max-width: 50%
+			.text
+				li
+					p
+						font-size: 14px
+	.solution
+		&--wrapper
+			.h2
+				margin-bottom: 50px
+			.text
+				max-width: 100%
+	.technical
+		margin-bottom: 5vh
+		.h2
+			margin-bottom: 50px
+		&--wrapper 
+			.image
+				max-width: 40%
+			.text
+				max-width: 60%
 
 	/* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
@@ -199,7 +315,6 @@
 					&:last-child
 						width: 35px
 						position: inherit
-						
 	.projects
 		.slider
 			margin-left: 16px
@@ -285,6 +400,81 @@
 	.collaborate .titles .h2,
 	.projects .slider .item .texts .h3
 		font-size: 40px
+	.page
+		&--projects 
+			.projects
+				&--wrapper
+					.concepts 
+						.concept
+							font-size: 12px
+					.item
+						.h3
+							span
+								top: 2px
+						.date
+							font-size: 12px
+						.block
+							.left
+								.by
+									font-size: 12px
+						&:first-child 
+							.h2
+								font-size: 5vw
+								span
+									top: 3px
+							.block 
+								.left 
+									.wrapper 
+										.flex
+											flex-direction: row
+									.flex
+										flex-direction: column
+										align-items: flex-start
+										gap: 20px
+										.by
+											font-size: 12px
+										.button
+											max-width: 130px
+											font-size: 12px
+											height: 30px
+											z-index: 1
+											display: flex
+											justify-content: center
+											align-items: center
+											span
+												line-height: inherit
+											&::after
+												height: 30px
+												z-index: -1
+												bottom: -5px
+												left: 5px
+												max-width: 130px
+	.basics, .solution, .technical
+		.h2
+			font-size: 32px
+		ul
+			li
+				font-size: 12px
+		&--wrapper
+			flex-direction: column-reverse
+			gap: 30px
+			.image, .text
+				max-width: 100%
+			.text
+				ul
+					li
+						flex-direction: column
+	.solution
+		&--wrapper
+			flex-direction: column
+	.technical 
+		.h2
+			span
+				top: 6px
+		&--wrapper .text .list li ul li
+			flex-direction: row
+			&::before
+				margin-left: 0
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 375px)
@@ -310,7 +500,48 @@
 @media only screen and (max-width : 320px)
 	.footer .titles .block .h2
 		font-size: 24px
-
+	.page
+		&--projects 
+			.projects
+				&--wrapper
+					.concepts 
+						gap: 5px
+						.concept
+							font-size: 10px
+					.item
+						&:first-child 
+							.block
+								gap: 10px
+								flex-direction: column-reverse
+								.left
+									min-height: fit-content
+									.wrapper .flex
+										margin-bottom: 10px
+	.basics, .solution, .technical
+		&--wrapper
+			gap: 20px
+		.h2
+			font-size: 24px
+			margin-bottom: 20px
+		ul 
+			li
+				font-size: 10px
+	.solution
+		&--wrapper 
+			.text 
+				.list
+					gap: 30px
+				li
+					gap: 10px
+					p
+						font-size: 10px
+	.technical
+		&--wrapper 
+			.text 
+				.list 
+					li 
+						.h4
+							gap: 10px
 
 /*==========  Mobile First  ==========*/
 
