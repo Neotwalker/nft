@@ -504,6 +504,29 @@ img
 						width: 172px
 						height: 53px
 						bottom: -5px
+					span
+						position: relative
+						&::before
+							background-color: #0f0f0f
+							bottom: 0
+							content: ''
+							display: block
+							height: 1px
+							position: absolute
+							right: 0
+							transition: width .6s cubic-bezier(.25,1,.5,1)
+							width: 0
+					&:hover
+						span
+							&::before
+								content: ''
+								display: block
+								position: absolute
+								left: 0
+								right: auto
+								width: 100%
+						&::after
+							border: 1px solid $black
 			.image
 				position: absolute
 				right: 0
