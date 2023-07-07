@@ -19,7 +19,7 @@ $(function() {
 		menu.slideToggle('medium').toggleClass('active');
 		$('body').toggleClass("overlay");
 		$('.burger--icon').toggleClass('open');
-	})
+	});
 
 });
 
